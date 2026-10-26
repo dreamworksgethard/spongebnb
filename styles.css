@@ -304,6 +304,9 @@ a { color: var(--aqua); }
 .nav-links a.btn-aqua:hover { background: var(--aqua); }
 .nav-links a.btn-pink,
 .nav-links a.btn-pink:hover { color: white; background: var(--pink); }
+.nav-links a.btn-chart,
+.nav-links a.btn-chart:hover { color: var(--ink); background: white; }
+.btn-chart { background: white; color: var(--ink); }
 .burger {
   display: none;
   margin-left: auto;
@@ -950,9 +953,8 @@ main { position: relative; z-index: 1; }
   background: rgba(4, 24, 48, 0.45);
   border: 3px dashed rgba(255, 255, 255, 0.45);
   font-weight: 700;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  font-size: clamp(13px, 1.5vw, 16px);
+  overflow-wrap: anywhere;
 }
 .ca-holder .btn { flex: none; }
 
