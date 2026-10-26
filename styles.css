@@ -298,6 +298,10 @@ a { color: var(--aqua); }
 }
 .nav-links a:hover,
 .nav-links a[aria-current="true"] { background: rgba(255, 255, 255, 0.16); }
+.nav-links a.btn,
+.nav-links a.btn:hover { color: var(--ink); background: var(--yellow); }
+.nav-links a.btn-aqua,
+.nav-links a.btn-aqua:hover { background: var(--aqua); }
 .burger {
   display: none;
   margin-left: auto;
