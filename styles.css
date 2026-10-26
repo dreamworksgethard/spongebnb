@@ -925,6 +925,8 @@ main { position: relative; z-index: 1; }
   line-height: 1;
 }
 .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.facts { grid-template-columns: repeat(3, 1fr); }
+.stat-num.name { font-size: clamp(28px, 3vw, 36px); }
 
 .num {
   display: grid;
