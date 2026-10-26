@@ -929,6 +929,33 @@ main { position: relative; z-index: 1; }
 .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
 .facts { grid-template-columns: repeat(3, 1fr); }
 .stat-num.name { font-size: clamp(28px, 3vw, 36px); }
+.ca-holder {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+}
+.ca-label {
+  font-family: "Lilita One", Fredoka, sans-serif;
+  font-size: 28px;
+  color: var(--yellow);
+  line-height: 1;
+}
+.ca-value {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: rgba(4, 24, 48, 0.45);
+  border: 3px dashed rgba(255, 255, 255, 0.45);
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ca-holder .btn { flex: none; }
 
 .num {
   display: grid;
@@ -1058,6 +1085,8 @@ footer {
   .chips { padding-top: 8px; }
   .status-pill { margin-top: 8px; font-size: 13px; }
   .spot-grid, .steps, .stats, .token-grid { grid-template-columns: 1fr; }
+  .ca-holder { flex-wrap: wrap; }
+  .ca-value { flex-basis: calc(100% - 52px); }
   .f2, .f3, .anchor, .street-sign, .chest, .snail, .c1, .rock, .crab-wrap { display: none; }
   .pineapple { width: 86px; left: 0; bottom: 36px; }
   .shack { width: 108px; right: 0; bottom: 30px; }

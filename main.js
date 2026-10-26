@@ -248,6 +248,27 @@ function initDepth() {
   });
 }
 
+function initCa() {
+  const button = $("#ca-copy");
+  const value = $("#ca-value");
+  if (!button || !value) return;
+  button.addEventListener("click", async () => {
+    const text = value.textContent.trim();
+    if (!text || /drops at launch/i.test(text)) {
+      toast("The contract address drops at launch.");
+      blip(420);
+      return;
+    }
+    try {
+      await navigator.clipboard.writeText(text);
+      toast("Contract copied.");
+      blip(660);
+    } catch {
+      toast("Copy the address from the page.");
+    }
+  });
+}
+
 function initSoon() {
   document.querySelectorAll("[data-soon]").forEach((button) => {
     button.addEventListener("click", () => {
@@ -276,5 +297,6 @@ spawnPlankton();
 initScene();
 initNav();
 initDepth();
+initCa();
 initSoon();
 initSound();
