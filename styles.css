@@ -302,6 +302,8 @@ a { color: var(--aqua); }
 .nav-links a.btn:hover { color: var(--ink); background: var(--yellow); }
 .nav-links a.btn-aqua,
 .nav-links a.btn-aqua:hover { background: var(--aqua); }
+.nav-links a.btn-pink,
+.nav-links a.btn-pink:hover { color: white; background: var(--pink); }
 .burger {
   display: none;
   margin-left: auto;
