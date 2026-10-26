@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SpongeBNB logo</title>
+  <style>
+    html, body { margin: 0; width: 1000px; height: 1000px; overflow: hidden; background: #0b4f90; }
+    .badge {
+      width: 1000px;
+      height: 1000px;
+      position: relative;
+      background:
+        radial-gradient(circle at 50% 18%, rgba(255,255,255,.45), transparent 32%),
+        linear-gradient(180deg, #8fd8ff 0%, #1a90d8 42%, #0c5ea3 100%);
+    }
+    .ring {
+      position: absolute;
+      inset: 18px;
+      border-radius: 50%;
+      border: 14px solid #14324a;
+      box-shadow: inset 0 0 0 8px rgba(255,255,255,.35);
+      pointer-events: none;
+    }
+    .disc {
+      position: absolute;
+      inset: 32px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+    .sand {
+      position: absolute;
+      left: -8%;
+      right: -8%;
+      bottom: -36px;
+      height: 250px;
+      background: linear-gradient(#f8e1a4, #e4b45e 70%, #d7a24a);
+      border-radius: 50%;
+    }
+    .bubble {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle at 32% 30%, #fff, rgba(255,255,255,.15) 55%, rgba(255,255,255,.05));
+      border: 3px solid rgba(255,255,255,.75);
+    }
+    .b1 { width: 46px; height: 46px; left: 150px; top: 180px; }
+    .b2 { width: 28px; height: 28px; left: 210px; top: 250px; }
+    .b3 { width: 36px; height: 36px; right: 168px; top: 210px; }
+    .b4 { width: 20px; height: 20px; right: 230px; top: 280px; }
+    .mascot {
+      position: absolute;
+      left: 50%;
+      top: 112px;
+      width: 500px;
+      transform: translateX(-50%);
+      filter: drop-shadow(0 16px 0 rgba(7, 40, 68, .18));
+    }
+    .mascot svg { width: 100%; height: auto; display: block; }
+  </style>
+</head>
+<body>
+  <div class="badge">
+    <div class="disc">
+    <div class="sand"></div>
+    <i class="bubble b1"></i>
+    <i class="bubble b2"></i>
+    <i class="bubble b3"></i>
+    <i class="bubble b4"></i>
+    <div class="mascot">
+      <svg viewBox="0 0 260 340" aria-hidden="true">
+        <g>
+          <line x1="78" y1="156" x2="36" y2="206" stroke="#14324a" stroke-width="26" stroke-linecap="round"/>
+          <line x1="78" y1="156" x2="36" y2="206" stroke="#ffe14a" stroke-width="16" stroke-linecap="round"/>
+          <circle cx="30" cy="214" r="14" fill="#ffe14a" stroke="#14324a" stroke-width="3"/>
+        </g>
+        <rect x="58" y="36" width="144" height="176" rx="36" fill="#ffe14a" stroke="#14324a" stroke-width="4"/>
+        <ellipse cx="78" cy="168" rx="10" ry="14" fill="#f0c400"/>
+        <ellipse cx="186" cy="78" rx="9" ry="12" fill="#f0c400"/>
+        <ellipse cx="176" cy="150" rx="11" ry="8" fill="#f0c400"/>
+        <ellipse cx="128" cy="52" rx="8" ry="6" fill="#f0c400"/>
+        <ellipse cx="92" cy="118" rx="16" ry="10" fill="#ff8fab" opacity="0.45"/>
+        <ellipse cx="168" cy="118" rx="16" ry="10" fill="#ff8fab" opacity="0.45"/>
+        <path d="M78 70 Q98 58 116 72" stroke="#14324a" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <path d="M146 72 Q166 58 184 70" stroke="#14324a" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <ellipse cx="104" cy="96" rx="26" ry="30" fill="#fff" stroke="#14324a" stroke-width="4"/>
+        <ellipse cx="158" cy="96" rx="26" ry="30" fill="#fff" stroke="#14324a" stroke-width="4"/>
+        <ellipse cx="108" cy="102" rx="12" ry="14" fill="#1d4e89"/>
+        <ellipse cx="162" cy="102" rx="12" ry="14" fill="#1d4e89"/>
+        <circle cx="108" cy="104" r="6" fill="#0d1b2a"/>
+        <circle cx="162" cy="104" r="6" fill="#0d1b2a"/>
+        <circle cx="112" cy="98" r="3" fill="#fff"/>
+        <circle cx="166" cy="98" r="3" fill="#fff"/>
+        <ellipse cx="132" cy="128" rx="16" ry="24" fill="#ffe14a" stroke="#14324a" stroke-width="4"/>
+        <path d="M124 140 Q132 146 140 140" stroke="#c98400" stroke-width="2" fill="none"/>
+        <path d="M100 156 Q132 196 166 156 Q132 168 100 156 Z" fill="#5c1228" stroke="#14324a" stroke-width="4"/>
+        <path d="M112 164 Q132 184 152 164 Q132 174 112 164 Z" fill="#ff6d8a"/>
+        <rect x="114" y="150" width="14" height="16" rx="3" fill="#fff" stroke="#14324a" stroke-width="3"/>
+        <rect x="134" y="150" width="14" height="16" rx="3" fill="#fff" stroke="#14324a" stroke-width="3"/>
+        <path d="M70 186 L96 176 L96 204 Z" fill="#fff" stroke="#14324a" stroke-width="3"/>
+        <path d="M190 186 L164 176 L164 204 Z" fill="#fff" stroke="#14324a" stroke-width="3"/>
+        <rect x="64" y="186" width="132" height="26" fill="#fff" stroke="#14324a" stroke-width="4"/>
+        <polygon points="132,188 120,214 132,236 144,214" fill="#e10600" stroke="#14324a" stroke-width="3"/>
+        <rect x="120" y="184" width="24" height="12" rx="3" fill="#e10600" stroke="#14324a" stroke-width="3"/>
+        <rect x="70" y="208" width="120" height="50" rx="10" fill="#7a4318" stroke="#14324a" stroke-width="4"/>
+        <path d="M130 208 V 258" stroke="#5c3010" stroke-width="3"/>
+        <rect x="96" y="254" width="26" height="36" rx="8" fill="#ffe14a" stroke="#14324a" stroke-width="4"/>
+        <rect x="142" y="254" width="26" height="36" rx="8" fill="#ffe14a" stroke="#14324a" stroke-width="4"/>
+        <rect x="94" y="282" width="30" height="8" fill="#e23b2f" stroke="#14324a" stroke-width="3"/>
+        <rect x="94" y="292" width="30" height="8" fill="#fff" stroke="#14324a" stroke-width="3"/>
+        <rect x="94" y="300" width="30" height="6" fill="#2f6fed"/>
+        <rect x="140" y="282" width="30" height="8" fill="#e23b2f" stroke="#14324a" stroke-width="3"/>
+        <rect x="140" y="292" width="30" height="8" fill="#fff" stroke="#14324a" stroke-width="3"/>
+        <rect x="140" y="300" width="30" height="6" fill="#2f6fed"/>
+        <ellipse cx="108" cy="316" rx="20" ry="12" fill="#1b1b1b" stroke="#14324a" stroke-width="3"/>
+        <ellipse cx="156" cy="316" rx="20" ry="12" fill="#1b1b1b" stroke="#14324a" stroke-width="3"/>
+        <line x1="196" y1="150" x2="236" y2="86" stroke="#14324a" stroke-width="26" stroke-linecap="round"/>
+        <line x1="196" y1="150" x2="236" y2="86" stroke="#ffe14a" stroke-width="16" stroke-linecap="round"/>
+        <circle cx="242" cy="76" r="15" fill="#ffe14a" stroke="#14324a" stroke-width="3"/>
+      </svg>
+    </div>
+    </div>
+    <div class="ring"></div>
+  </div>
+</body>
+</html>

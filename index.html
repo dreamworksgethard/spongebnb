@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SpongeBNB — The underwater meme coin</title>
+  <meta name="description" content="SpongeBNB is a fan-made underwater meme coin on BNB Chain. A living cartoon reef with a pineapple house, jellyfish, and a zero-tax launch plan.">
+  <meta name="theme-color" content="#0c6ebd">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Lilita+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=3">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <div class="ocean" aria-hidden="true">
+    <div class="rays">
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="caustics"></div>
+    <div class="wave wave-a"></div>
+    <div class="wave wave-b"></div>
+    <svg class="skiff" viewBox="0 0 120 48" aria-hidden="true">
+      <path d="M8 28 Q60 44 112 28 L100 34 Q60 46 20 34 Z" fill="#8d4b12" stroke="#14324a" stroke-width="3"/>
+      <path d="M58 28 V8" stroke="#14324a" stroke-width="3"/>
+      <path d="M60 10 L92 22 L60 22 Z" fill="#ff6d8a" stroke="#14324a" stroke-width="3"/>
+    </svg>
+    <div class="bubbles" id="bubbles"></div>
+    <div class="fish-layer" id="fish-layer"></div>
+    <div class="jelly-layer" id="jelly-layer"></div>
+    <div class="plankton" id="plankton"></div>
+    <svg class="sub" viewBox="0 0 200 80" aria-hidden="true">
+      <g class="prop">
+        <ellipse cx="18" cy="48" rx="8" ry="16" fill="#9ad7ff" stroke="#14324a" stroke-width="3"/>
+      </g>
+      <ellipse cx="104" cy="50" rx="72" ry="22" fill="#ffd84a" stroke="#14324a" stroke-width="3"/>
+      <rect x="112" y="18" width="28" height="20" rx="4" fill="#ffd84a" stroke="#14324a" stroke-width="3"/>
+      <circle cx="78" cy="48" r="5" fill="#7ee0ff" stroke="#14324a" stroke-width="2"/>
+      <circle cx="104" cy="48" r="5" fill="#7ee0ff" stroke="#14324a" stroke-width="2"/>
+      <circle cx="132" cy="48" r="5" fill="#7ee0ff" stroke="#14324a" stroke-width="2"/>
+    </svg>
+    <div class="depth-shade"></div>
+  </div>
+
+  <div class="depth" aria-hidden="true">
+    <div class="depth-track"><div class="depth-fill" id="depth-fill"></div></div>
+    <span id="depth-label">Surface</span>
+  </div>
+
+  <header class="nav">
+    <a class="brand" href="#home">
+      <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+        <rect x="8" y="6" width="48" height="36" rx="10" fill="#ffe14a" stroke="#14324a" stroke-width="3"/>
+        <circle cx="24" cy="22" r="7" fill="#fff" stroke="#14324a" stroke-width="2"/>
+        <circle cx="40" cy="22" r="7" fill="#fff" stroke="#14324a" stroke-width="2"/>
+        <circle cx="26" cy="23" r="3" fill="#1d4e89"/>
+        <circle cx="42" cy="23" r="3" fill="#1d4e89"/>
+        <rect x="8" y="40" width="48" height="8" fill="#fff" stroke="#14324a" stroke-width="3"/>
+        <rect x="14" y="47" width="36" height="9" rx="2" fill="#7a4318" stroke="#14324a" stroke-width="3"/>
+      </svg>
+      SpongeBNB
+    </a>
+    <button class="burger" type="button" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links">
+      <a href="#about">The Town</a>
+      <a href="#tokenomics">Tokenomics</a>
+      <a href="#buy">Grab a Net</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#crew">Crew</a>
+      <button class="btn icon-btn" id="sound-btn" type="button" aria-pressed="false">Sound off</button>
+      <a class="btn btn-yellow" href="https://flap.sh" target="_blank" rel="noopener noreferrer">Buy $SPONGE</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="kicker"><span class="pulse"></span> Pre-launch · BNB Smart Chain</p>
+        <h1 aria-label="SpongeBNB">
+          <span>S</span><span>P</span><span>O</span><span>N</span><span>G</span><span>E</span><span class="sea">B</span><span class="sea">N</span><span class="sea">B</span>
+        </h1>
+        <p class="lede">The underwater meme coin for BNB Chain. A living cartoon reef, a pineapple treasury, and a launch plan with zero taxes and burned liquidity.</p>
+        <div class="cta-row">
+          <a class="btn btn-yellow" href="https://flap.sh" target="_blank" rel="noopener noreferrer">Buy on flap.sh</a>
+          <a class="btn btn-aqua" href="#tokenomics">Tokenomics</a>
+          <a class="btn btn-pink" href="#crew">Join the crew</a>
+        </div>
+        <ul class="chips">
+          <li>Ticker $SPONGE</li>
+          <li>Supply 1,000,000,000</li>
+          <li>0% / 0% tax plan</li>
+        </ul>
+        <p class="status-pill">Contract <strong>drops at launch</strong> — ignore random addresses in your DMs</p>
+      </div>
+
+      <div class="town">
+        <div class="sand"></div>
+        <div class="pebbles"></div>
+
+        <svg class="kelp k1" viewBox="0 0 80 220" aria-hidden="true">
+          <path d="M40 220 C 18 160, 62 140, 30 90 C 8 50, 52 36, 36 0" stroke="#148a3c" stroke-width="14" fill="none" stroke-linecap="round"/>
+          <path d="M40 220 C 18 160, 62 140, 30 90 C 8 50, 52 36, 36 0" stroke="#5ee08a" stroke-width="6" fill="none" stroke-linecap="round"/>
+        </svg>
+        <svg class="kelp k2" viewBox="0 0 80 220" aria-hidden="true">
+          <path d="M36 220 C 60 150, 16 120, 48 70 C 66 40, 30 24, 44 0" stroke="#0e7a38" stroke-width="12" fill="none" stroke-linecap="round"/>
+          <path d="M36 220 C 60 150, 16 120, 48 70 C 66 40, 30 24, 44 0" stroke="#3dce6a" stroke-width="5" fill="none" stroke-linecap="round"/>
+        </svg>
+        <svg class="kelp k3" viewBox="0 0 80 220" aria-hidden="true">
+          <path d="M42 220 C 16 150, 64 130, 28 80 C 10 46, 50 30, 34 0" stroke="#148a3c" stroke-width="14" fill="none" stroke-linecap="round"/>
+          <path d="M42 220 C 16 150, 64 130, 28 80 C 10 46, 50 30, 34 0" stroke="#8cf0b0" stroke-width="5" fill="none" stroke-linecap="round"/>
+        </svg>
+        <svg class="kelp k4" viewBox="0 0 80 220" aria-hidden="true">
+          <path d="M30 220 C 58 160, 20 120, 46 74 C 62 42, 28 20, 40 0" stroke="#0e7a38" stroke-width="12" fill="none" stroke-linecap="round"/>
+        </svg>
+
+        <div class="scene">
+          <svg class="flower f1" viewBox="0 0 80 150" aria-hidden="true">
+            <path d="M40 150 C 36 110, 44 90, 40 62" stroke="#1f8a3b" stroke-width="5" fill="none"/>
+            <path d="M40 108 C 18 96, 16 78, 38 88" fill="#2faf55" stroke="#14324a" stroke-width="3"/>
+            <circle cx="24" cy="52" r="14" fill="#ff8ab0" stroke="#14324a" stroke-width="3"/>
+            <circle cx="56" cy="52" r="14" fill="#ff8ab0" stroke="#14324a" stroke-width="3"/>
+            <circle cx="28" cy="30" r="14" fill="#ff5d8f" stroke="#14324a" stroke-width="3"/>
+            <circle cx="52" cy="30" r="14" fill="#ff5d8f" stroke="#14324a" stroke-width="3"/>
+            <circle cx="40" cy="46" r="16" fill="#ff5d8f" stroke="#14324a" stroke-width="3"/>
+            <circle cx="40" cy="46" r="8" fill="#ffe14a" stroke="#14324a" stroke-width="3"/>
+            <circle cx="37" cy="44" r="1.6" fill="#14324a"/>
+            <circle cx="43" cy="44" r="1.6" fill="#14324a"/>
+            <path d="M36 49 Q40 53 44 49" stroke="#14324a" fill="none" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+
+          <svg class="coral c1" viewBox="0 0 80 90" aria-hidden="true">
+            <path d="M40 88 C 40 60, 18 58, 20 28" stroke="#ff6b8a" stroke-width="10" fill="none" stroke-linecap="round"/>
+            <path d="M40 88 C 42 50, 62 48, 64 18" stroke="#ff8f6b" stroke-width="10" fill="none" stroke-linecap="round"/>
+            <path d="M40 88 V 20" stroke="#ff5d8f" stroke-width="10" fill="none" stroke-linecap="round"/>
+            <circle cx="20" cy="24" r="7" fill="#ffd0dc" stroke="#14324a" stroke-width="3"/>
+            <circle cx="64" cy="16" r="7" fill="#ffe0c2" stroke="#14324a" stroke-width="3"/>
+            <circle cx="40" cy="16" r="7" fill="#ffb3c7" stroke="#14324a" stroke-width="3"/>
+          </svg>
+
+          <svg class="flower f2" viewBox="0 0 80 150" aria-hidden="true">
+            <path d="M40 150 V 64" stroke="#1f8a3b" stroke-width="5"/>
+            <circle cx="22" cy="50" r="13" fill="#c9a6ff" stroke="#14324a" stroke-width="3"/>
+            <circle cx="58" cy="50" r="13" fill="#c9a6ff" stroke="#14324a" stroke-width="3"/>
+            <circle cx="30" cy="28" r="13" fill="#a78bfa" stroke="#14324a" stroke-width="3"/>
+            <circle cx="52" cy="28" r="13" fill="#a78bfa" stroke="#14324a" stroke-width="3"/>
+            <circle cx="40" cy="44" r="15" fill="#8b6cf0" stroke="#14324a" stroke-width="3"/>
+            <circle cx="40" cy="44" r="7" fill="#ffe14a" stroke="#14324a" stroke-width="3"/>
+            <circle cx="37" cy="42" r="1.5" fill="#14324a"/>
+            <circle cx="43" cy="42" r="1.5" fill="#14324a"/>
+          </svg>
+
+          <button class="pineapple" id="pineapple" type="button" aria-pressed="false" aria-label="Pineapple house">
+            <span class="smoke" aria-hidden="true"><i></i><i></i><i></i></span>
+            <svg viewBox="0 0 220 270" aria-hidden="true">
+              <g class="leaves">
+                <ellipse cx="110" cy="78" rx="16" ry="52" fill="#1f9d45" stroke="#14324a" stroke-width="4"/>
+                <ellipse cx="78" cy="92" rx="16" ry="46" fill="#2faf55" stroke="#14324a" stroke-width="4" transform="rotate(-28 78 92)"/>
+                <ellipse cx="146" cy="90" rx="16" ry="48" fill="#46c86e" stroke="#14324a" stroke-width="4" transform="rotate(26 146 90)"/>
+                <ellipse cx="58" cy="112" rx="13" ry="36" fill="#178a3c" stroke="#14324a" stroke-width="4" transform="rotate(-48 58 112)"/>
+                <ellipse cx="168" cy="110" rx="13" ry="36" fill="#178a3c" stroke="#14324a" stroke-width="4" transform="rotate(46 168 110)"/>
+              </g>
+              <defs>
+                <clipPath id="pineClip">
+                  <ellipse cx="110" cy="168" rx="78" ry="92"/>
+                </clipPath>
+              </defs>
+              <ellipse cx="110" cy="168" rx="78" ry="92" fill="#f5b429" stroke="#14324a" stroke-width="4"/>
+              <g clip-path="url(#pineClip)" stroke="#e08a00" stroke-width="3" opacity="0.7">
+                <path d="M40 90 L180 230 M20 130 L160 270 M60 70 L200 210 M80 60 L220 200 M0 170 L120 290 M100 50 L240 190"/>
+                <path d="M180 90 L40 230 M200 130 L60 270 M160 70 L20 210 M140 60 L0 200"/>
+              </g>
+              <ellipse cx="110" cy="168" rx="78" ry="92" fill="none" stroke="#14324a" stroke-width="4"/>
+              <rect x="168" y="118" width="16" height="28" rx="3" fill="#8d8d8d" stroke="#14324a" stroke-width="3"/>
+              <circle cx="150" cy="128" r="18" fill="#c9f4ff" stroke="#14324a" stroke-width="4"/>
+              <circle cx="150" cy="128" r="8" fill="#7ec8ea"/>
+              <g class="door">
+                <rect x="86" y="176" width="46" height="72" rx="23" fill="#6b3a1f" stroke="#14324a" stroke-width="4"/>
+                <circle cx="122" cy="214" r="4" fill="#f5d76a"/>
+              </g>
+            </svg>
+          </button>
+          <div class="house-tip" id="house-tip">The treasury lives here.</div>
+
+          <svg class="snail" viewBox="0 0 90 70" aria-hidden="true">
+            <ellipse cx="48" cy="54" rx="28" ry="10" fill="#7dffb3" stroke="#14324a" stroke-width="3"/>
+            <circle cx="34" cy="40" r="16" fill="#d9b4ff" stroke="#14324a" stroke-width="3"/>
+            <circle cx="30" cy="38" r="7" fill="#f3e8ff" stroke="#14324a" stroke-width="2"/>
+            <g class="eyestalk">
+              <path d="M62 48 V 24" stroke="#7dffb3" stroke-width="4" stroke-linecap="round"/>
+              <circle cx="62" cy="20" r="5" fill="#fff" stroke="#14324a" stroke-width="2"/>
+              <circle cx="63" cy="20" r="2" fill="#14324a"/>
+            </g>
+            <g class="eyestalk" style="animation-delay:-.4s">
+              <path d="M72 50 V 28" stroke="#7dffb3" stroke-width="4" stroke-linecap="round"/>
+              <circle cx="72" cy="24" r="5" fill="#fff" stroke="#14324a" stroke-width="2"/>
+              <circle cx="73" cy="24" r="2" fill="#14324a"/>
+            </g>
+          </svg>
+
+          <svg class="rock" viewBox="0 0 100 60" aria-hidden="true">
+            <ellipse cx="50" cy="36" rx="44" ry="20" fill="#8ea0ad" stroke="#14324a" stroke-width="3"/>
+            <ellipse cx="36" cy="30" rx="16" ry="10" fill="#c5d2da"/>
+          </svg>
+
+          <svg class="flower f3" viewBox="0 0 80 150" aria-hidden="true">
+            <path d="M40 150 C 44 100, 34 80, 40 60" stroke="#1f8a3b" stroke-width="5" fill="none"/>
+            <circle cx="22" cy="48" r="13" fill="#ffb703" stroke="#14324a" stroke-width="3"/>
+            <circle cx="58" cy="48" r="13" fill="#ffb703" stroke="#14324a" stroke-width="3"/>
+            <circle cx="40" cy="30" r="14" fill="#fb8500" stroke="#14324a" stroke-width="3"/>
+            <circle cx="40" cy="48" r="12" fill="#ffe14a" stroke="#14324a" stroke-width="3"/>
+            <circle cx="36" cy="46" r="1.6" fill="#14324a"/>
+            <circle cx="44" cy="46" r="1.6" fill="#14324a"/>
+            <path d="M36 52 Q40 56 44 52" stroke="#14324a" fill="none" stroke-width="2"/>
+          </svg>
+
+          <div class="mascot">
+            <div class="shadow"></div>
+            <button class="sponge" id="sponge" type="button" aria-label="Sponge mascot, activate for a cheer">
+              <svg viewBox="0 0 260 340" aria-hidden="true">
+                <g class="arm-left">
+                  <line x1="78" y1="156" x2="36" y2="206" stroke="#14324a" stroke-width="26" stroke-linecap="round"/>
+                  <line x1="78" y1="156" x2="36" y2="206" stroke="#ffe14a" stroke-width="16" stroke-linecap="round"/>
+                  <circle cx="30" cy="214" r="14" fill="#ffe14a" stroke="#14324a" stroke-width="3"/>
+                </g>
+                <rect x="58" y="36" width="144" height="176" rx="36" fill="#ffe14a" stroke="#14324a" stroke-width="4"/>
+                <ellipse cx="78" cy="168" rx="10" ry="14" fill="#f0c400"/>
+                <ellipse cx="186" cy="78" rx="9" ry="12" fill="#f0c400"/>
+                <ellipse cx="176" cy="150" rx="11" ry="8" fill="#f0c400"/>
+                <ellipse cx="128" cy="52" rx="8" ry="6" fill="#f0c400"/>
+                <ellipse cx="92" cy="118" rx="16" ry="10" fill="#ff8fab" opacity="0.45"/>
+                <ellipse cx="168" cy="118" rx="16" ry="10" fill="#ff8fab" opacity="0.45"/>
+                <path d="M78 70 Q98 58 116 72" stroke="#14324a" stroke-width="5" fill="none" stroke-linecap="round"/>
+                <path d="M146 72 Q166 58 184 70" stroke="#14324a" stroke-width="5" fill="none" stroke-linecap="round"/>
+                <ellipse cx="104" cy="96" rx="26" ry="30" fill="#fff" stroke="#14324a" stroke-width="4"/>
+                <ellipse cx="158" cy="96" rx="26" ry="30" fill="#fff" stroke="#14324a" stroke-width="4"/>
+                <g class="pupils">
+                  <ellipse cx="108" cy="102" rx="12" ry="14" fill="#1d4e89"/>
+                  <ellipse cx="162" cy="102" rx="12" ry="14" fill="#1d4e89"/>
+                  <circle cx="108" cy="104" r="6" fill="#0d1b2a"/>
+                  <circle cx="162" cy="104" r="6" fill="#0d1b2a"/>
+                  <circle cx="112" cy="98" r="3" fill="#fff"/>
+                  <circle cx="166" cy="98" r="3" fill="#fff"/>
+                </g>
+                <ellipse class="eyelid" cx="104" cy="96" rx="26" ry="30" fill="#ffe14a" stroke="#14324a" stroke-width="4"/>
+                <ellipse class="eyelid late" cx="158" cy="96" rx="26" ry="30" fill="#ffe14a" stroke="#14324a" stroke-width="4"/>
+                <ellipse cx="132" cy="128" rx="16" ry="24" fill="#ffe14a" stroke="#14324a" stroke-width="4"/>
+                <path d="M124 140 Q132 146 140 140" stroke="#c98400" stroke-width="2" fill="none"/>
+                <path d="M100 156 Q132 196 166 156 Q132 168 100 156 Z" fill="#5c1228" stroke="#14324a" stroke-width="4"/>
+                <path d="M112 164 Q132 184 152 164 Q132 174 112 164 Z" fill="#ff6d8a"/>
+                <rect x="114" y="150" width="14" height="16" rx="3" fill="#fff" stroke="#14324a" stroke-width="3"/>
+                <rect x="134" y="150" width="14" height="16" rx="3" fill="#fff" stroke="#14324a" stroke-width="3"/>
+                <path d="M70 186 L96 176 L96 204 Z" fill="#fff" stroke="#14324a" stroke-width="3"/>
+                <path d="M190 186 L164 176 L164 204 Z" fill="#fff" stroke="#14324a" stroke-width="3"/>
+                <rect x="64" y="186" width="132" height="26" fill="#fff" stroke="#14324a" stroke-width="4"/>
+                <g class="tie">
+                  <polygon points="132,188 120,214 132,236 144,214" fill="#e10600" stroke="#14324a" stroke-width="3"/>
+                  <rect x="120" y="184" width="24" height="12" rx="3" fill="#e10600" stroke="#14324a" stroke-width="3"/>
+                </g>
+                <rect x="70" y="208" width="120" height="50" rx="10" fill="#7a4318" stroke="#14324a" stroke-width="4"/>
+                <path d="M130 208 V 258" stroke="#5c3010" stroke-width="3"/>
+                <rect x="96" y="254" width="26" height="36" rx="8" fill="#ffe14a" stroke="#14324a" stroke-width="4"/>
+                <rect x="142" y="254" width="26" height="36" rx="8" fill="#ffe14a" stroke="#14324a" stroke-width="4"/>
+                <rect x="94" y="282" width="30" height="8" fill="#e23b2f" stroke="#14324a" stroke-width="3"/>
+                <rect x="94" y="292" width="30" height="8" fill="#fff" stroke="#14324a" stroke-width="3"/>
+                <rect x="94" y="300" width="30" height="6" fill="#2f6fed"/>
+                <rect x="140" y="282" width="30" height="8" fill="#e23b2f" stroke="#14324a" stroke-width="3"/>
+                <rect x="140" y="292" width="30" height="8" fill="#fff" stroke="#14324a" stroke-width="3"/>
+                <rect x="140" y="300" width="30" height="6" fill="#2f6fed"/>
+                <ellipse cx="108" cy="316" rx="20" ry="12" fill="#1b1b1b" stroke="#14324a" stroke-width="3"/>
+                <ellipse cx="156" cy="316" rx="20" ry="12" fill="#1b1b1b" stroke="#14324a" stroke-width="3"/>
+                <g class="arm-wave">
+                  <line x1="196" y1="150" x2="236" y2="86" stroke="#14324a" stroke-width="26" stroke-linecap="round"/>
+                  <line x1="196" y1="150" x2="236" y2="86" stroke="#ffe14a" stroke-width="16" stroke-linecap="round"/>
+                  <circle cx="242" cy="76" r="15" fill="#ffe14a" stroke="#14324a" stroke-width="3"/>
+                </g>
+              </svg>
+            </button>
+            <div class="speech" id="speech"></div>
+          </div>
+
+          <button class="chest" id="chest" type="button" aria-label="Treasure chest">
+            <svg viewBox="0 0 120 110" aria-hidden="true">
+              <circle class="coin c1" cx="36" cy="28" r="10" fill="#ffd84a" stroke="#14324a" stroke-width="3"/>
+              <circle class="coin c2" cx="60" cy="18" r="10" fill="#ffe14a" stroke="#14324a" stroke-width="3"/>
+              <circle class="coin c3" cx="84" cy="28" r="10" fill="#f0c14a" stroke="#14324a" stroke-width="3"/>
+              <text x="36" y="32" text-anchor="middle" font-size="11" font-family="Lilita One, sans-serif" fill="#14324a">S</text>
+              <text x="60" y="22" text-anchor="middle" font-size="11" font-family="Lilita One, sans-serif" fill="#14324a">S</text>
+              <text x="84" y="32" text-anchor="middle" font-size="11" font-family="Lilita One, sans-serif" fill="#14324a">S</text>
+              <g class="lid">
+                <path d="M10 48 Q60 8 110 48" fill="#c47a32" stroke="#14324a" stroke-width="3"/>
+              </g>
+              <rect x="8" y="46" width="104" height="50" rx="6" fill="#8d4e22" stroke="#14324a" stroke-width="3"/>
+              <rect x="8" y="58" width="104" height="12" fill="#f0c14a" stroke="#14324a" stroke-width="3"/>
+              <circle cx="60" cy="80" r="6" fill="#ffe14a" stroke="#14324a" stroke-width="3"/>
+            </svg>
+          </button>
+
+          <svg class="flower f4" viewBox="0 0 80 150" aria-hidden="true">
+            <path d="M40 150 V 62" stroke="#1f8a3b" stroke-width="5"/>
+            <circle cx="24" cy="50" r="14" fill="#ff8ab0" stroke="#14324a" stroke-width="3"/>
+            <circle cx="56" cy="50" r="14" fill="#ff8ab0" stroke="#14324a" stroke-width="3"/>
+            <circle cx="40" cy="32" r="14" fill="#ff5d8f" stroke="#14324a" stroke-width="3"/>
+            <circle cx="40" cy="48" r="8" fill="#ffe14a" stroke="#14324a" stroke-width="3"/>
+          </svg>
+
+          <svg class="anchor" viewBox="0 0 70 90" aria-hidden="true">
+            <circle cx="35" cy="14" r="8" fill="none" stroke="#9aa7b2" stroke-width="5"/>
+            <path d="M35 22 V 70" stroke="#c5d0d8" stroke-width="6" stroke-linecap="round"/>
+            <path d="M18 40 H 52" stroke="#c5d0d8" stroke-width="6" stroke-linecap="round"/>
+            <path d="M35 70 Q 8 70 8 50" stroke="#c5d0d8" stroke-width="6" fill="none" stroke-linecap="round"/>
+            <path d="M35 70 Q 62 70 62 50" stroke="#c5d0d8" stroke-width="6" fill="none" stroke-linecap="round"/>
+          </svg>
+
+          <div class="shack" aria-hidden="true">
+            <svg viewBox="0 0 280 230" aria-hidden="true">
+              <line x1="196" y1="78" x2="196" y2="18" stroke="#14324a" stroke-width="4"/>
+              <path class="flag" d="M198 20 H248 L236 34 H198 Z" fill="#ff6d8a" stroke="#14324a" stroke-width="3"/>
+              <circle cx="228" cy="32" r="5" fill="#ffe14a" stroke="#14324a" stroke-width="2"/>
+              <polygon points="36,78 140,28 244,78" fill="#e23d28" stroke="#14324a" stroke-width="4"/>
+              <rect x="48" y="74" width="184" height="92" rx="8" fill="#2ec4b6" stroke="#14324a" stroke-width="4"/>
+              <rect x="70" y="88" width="140" height="28" rx="6" fill="#c47a32" stroke="#14324a" stroke-width="3"/>
+              <text x="140" y="108" text-anchor="middle" font-family="Lilita One, Fredoka, sans-serif" font-size="16" fill="#fff8e6" stroke="#14324a" stroke-width="3" paint-order="stroke">PATTY SHACK</text>
+              <text class="open-sign" x="140" y="146" text-anchor="middle" font-family="Lilita One, Fredoka, sans-serif" font-size="16" fill="#7dffb3" stroke="#14324a" stroke-width="3" paint-order="stroke">OPEN</text>
+              <circle cx="78" cy="140" r="12" fill="#9ee7ff" stroke="#14324a" stroke-width="3"/>
+              <circle cx="202" cy="140" r="12" fill="#9ee7ff" stroke="#14324a" stroke-width="3"/>
+              <rect x="122" y="128" width="36" height="38" rx="4" fill="#6b3a1f" stroke="#14324a" stroke-width="3"/>
+              <ellipse cx="140" cy="176" rx="120" ry="32" fill="#8d4b12" stroke="#14324a" stroke-width="4"/>
+              <circle cx="230" cy="150" r="16" fill="none" stroke="#fff" stroke-width="6"/>
+              <circle cx="230" cy="150" r="16" fill="none" stroke="#e23d28" stroke-width="6" stroke-dasharray="14 10"/>
+            </svg>
+          </div>
+
+          <svg class="coral c2" viewBox="0 0 70 80" aria-hidden="true">
+            <path d="M20 78 C 10 40, 30 36, 18 8" stroke="#ffb703" stroke-width="8" fill="none" stroke-linecap="round"/>
+            <path d="M36 78 C 40 46, 58 40, 52 12" stroke="#ff6b8a" stroke-width="8" fill="none" stroke-linecap="round"/>
+            <circle cx="18" cy="10" r="6" fill="#ffe14a" stroke="#14324a" stroke-width="2"/>
+            <circle cx="52" cy="12" r="6" fill="#ffd0dc" stroke="#14324a" stroke-width="2"/>
+          </svg>
+
+          <svg class="flower f5" viewBox="0 0 80 150" aria-hidden="true">
+            <path d="M40 150 C 30 100, 50 80, 40 58" stroke="#1f8a3b" stroke-width="5" fill="none"/>
+            <circle cx="22" cy="46" r="14" fill="#7dfff0" stroke="#14324a" stroke-width="3"/>
+            <circle cx="58" cy="46" r="14" fill="#7dfff0" stroke="#14324a" stroke-width="3"/>
+            <circle cx="40" cy="28" r="14" fill="#2ec4b6" stroke="#14324a" stroke-width="3"/>
+            <circle cx="40" cy="44" r="8" fill="#ffe14a" stroke="#14324a" stroke-width="3"/>
+            <circle cx="37" cy="42" r="1.5" fill="#14324a"/>
+            <circle cx="43" cy="42" r="1.5" fill="#14324a"/>
+          </svg>
+
+          <div class="crab-wrap" aria-hidden="true">
+            <svg class="crab" viewBox="0 0 80 50">
+              <ellipse cx="40" cy="30" rx="18" ry="12" fill="#e23d28" stroke="#14324a" stroke-width="3"/>
+              <circle cx="34" cy="26" r="2" fill="#14324a"/>
+              <circle cx="46" cy="26" r="2" fill="#14324a"/>
+              <path d="M22 28 Q 8 16 14 10" stroke="#e23d28" stroke-width="4" fill="none" stroke-linecap="round"/>
+              <path d="M58 28 Q 72 16 66 10" stroke="#e23d28" stroke-width="4" fill="none" stroke-linecap="round"/>
+              <path d="M28 40 L 22 48 M 36 42 L 34 50 M 48 42 L 50 50 M 56 38 L 64 46" stroke="#e23d28" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>BUBBLE UP</span><span>$SPONGE</span><span>ZERO TAX PLAN</span><span>BNB CHAIN</span><span>JELLYFISH SEASON</span><span>PINEAPPLE POWER</span><span>FAIR LAUNCH</span><span>PINEAPPLE LANE</span>
+        <span>BUBBLE UP</span><span>$SPONGE</span><span>ZERO TAX PLAN</span><span>BNB CHAIN</span><span>JELLYFISH SEASON</span><span>PINEAPPLE POWER</span><span>FAIR LAUNCH</span><span>PINEAPPLE LANE</span>
+      </div>
+    </div>
+
+    <section class="band" id="about">
+      <div class="wrap">
+        <h2 class="reveal">A town under the tide</h2>
+        <p class="lede reveal">SpongeBNB is a community meme coin that lives on BNB Chain. The pineapple keeps the treasury, the jellyfish light the charts, and the Patty Shack only serves fair launches.</p>
+        <div class="spot-grid">
+          <article class="glass spot reveal">
+            <svg class="mini" viewBox="0 0 64 64" aria-hidden="true">
+              <ellipse cx="32" cy="18" rx="6" ry="14" fill="#2faf55" stroke="#14324a" stroke-width="2"/>
+              <ellipse cx="32" cy="40" rx="16" ry="18" fill="#f5b429" stroke="#14324a" stroke-width="3"/>
+            </svg>
+            <h3>Pineapple Pad</h3>
+            <p>Front door of the town and home of the treasury. Click it. The door actually opens.</p>
+          </article>
+          <article class="glass spot reveal">
+            <svg class="mini" viewBox="0 0 64 64" aria-hidden="true">
+              <polygon points="8,28 32,12 56,28" fill="#e23d28" stroke="#14324a" stroke-width="3"/>
+              <rect x="14" y="28" width="36" height="22" fill="#2ec4b6" stroke="#14324a" stroke-width="3"/>
+            </svg>
+            <h3>Patty Shack</h3>
+            <p>A little ship on the sand. Burgers on the flag, liquidity on the menu.</p>
+          </article>
+          <article class="glass spot reveal">
+            <svg class="mini" viewBox="0 0 64 64" aria-hidden="true">
+              <path d="M16 28 Q16 10 32 10 Q48 10 48 28 Q40 22 32 30 Q24 22 16 28Z" fill="#ff7ad9" stroke="#14324a" stroke-width="3"/>
+              <path d="M24 30 C 22 46, 28 48, 24 58" stroke="#ff7ad9" stroke-width="3" fill="none"/>
+              <path d="M40 30 C 42 46, 36 48, 40 58" stroke="#ff7ad9" stroke-width="3" fill="none"/>
+            </svg>
+            <h3>Jellyfish Fields</h3>
+            <p>The community. They drift, they glow, and they dart away if you poke them.</p>
+          </article>
+          <article class="glass spot reveal">
+            <svg class="mini" viewBox="0 0 64 64" aria-hidden="true">
+              <circle cx="32" cy="14" r="6" fill="none" stroke="#d5dee6" stroke-width="4"/>
+              <path d="M32 20 V 48 M 22 32 H 42" stroke="#d5dee6" stroke-width="4" stroke-linecap="round"/>
+              <path d="M32 48 Q 16 48 16 36" stroke="#d5dee6" stroke-width="4" fill="none"/>
+            </svg>
+            <h3>Anchor Lock</h3>
+            <p>Liquidity is planned to be burned at launch so the tide cannot yank it back.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="tokenomics">
+      <div class="wrap">
+        <h2 class="reveal">Tokenomics</h2>
+        <p class="lede reveal">One billion bubbles. The split below is the launch plan, not a live sale.</p>
+        <div class="token-layout">
+          <div class="pie-wrap reveal">
+            <div class="pie" role="img" aria-label="50 percent liquidity, 25 percent community, 15 percent marketing, 10 percent treasury"><span></span></div>
+            <ul class="legend">
+              <li><i class="i1"></i>50% liquidity</li>
+              <li><i class="i2"></i>25% community</li>
+              <li><i class="i3"></i>15% marketing</li>
+              <li><i class="i4"></i>10% treasury</li>
+            </ul>
+          </div>
+          <div class="stats">
+            <article class="glass stat reveal">
+              <p class="stat-num">50%</p>
+              <h3>flap.sh launch</h3>
+              <p>The token launches on flap.sh. Liquidity is burned so the pool stays on the seafloor.</p>
+            </article>
+            <article class="glass stat reveal">
+              <p class="stat-num">25%</p>
+              <h3>Jelly jars</h3>
+              <p>Community airdrops, meme contests, and crew rewards.</p>
+            </article>
+            <article class="glass stat reveal">
+              <p class="stat-num">15%</p>
+              <h3>Treasure chest</h3>
+              <p>Marketing: art, raids, and the loud stuff a reef needs.</p>
+            </article>
+            <article class="glass stat reveal">
+              <p class="stat-num">10%</p>
+              <h3>Pineapple treasury</h3>
+              <p>Listings and upkeep. The house on Pineapple Lane.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="buy">
+      <div class="wrap">
+        <h2 class="reveal">Grab a net</h2>
+        <p class="lede reveal">$SPONGE launches on <a href="https://flap.sh" target="_blank" rel="noopener noreferrer">flap.sh</a>. Grab a wallet, then buy there.</p>
+        <ol class="steps">
+          <li class="glass reveal">
+            <span class="num">1</span>
+            <h3>Grab a wallet</h3>
+            <p>Install <a href="https://metamask.io" target="_blank" rel="noopener noreferrer">MetaMask</a> or <a href="https://trustwallet.com" target="_blank" rel="noopener noreferrer">Trust Wallet</a>.</p>
+          </li>
+          <li class="glass reveal">
+            <span class="num">2</span>
+            <h3>Switch to BNB</h3>
+            <p>Use BNB Smart Chain, chain ID 56, symbol BNB. Add the network in your wallet if it is missing.</p>
+          </li>
+          <li class="glass reveal">
+            <span class="num">3</span>
+            <h3>Fund the wallet</h3>
+            <p>Buy a little BNB for the swap and a little extra for gas. Leave the seed phrase offline.</p>
+          </li>
+          <li class="glass reveal">
+            <span class="num">4</span>
+            <h3>Buy on flap.sh</h3>
+            <p>Open <a href="https://flap.sh" target="_blank" rel="noopener noreferrer">flap.sh</a> and swap BNB for $SPONGE when the launch is live.</p>
+          </li>
+        </ol>
+        <div class="callout reveal">
+          <p><strong>Life ring.</strong> If someone DMs you a contract, it is a jellyfish with teeth. Wait for the address published on the official crew channels. Meme coins can go to zero. This page is not financial advice.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="roadmap">
+      <div class="wrap">
+        <h2 class="reveal">Dive plan</h2>
+        <p class="lede reveal">From the surface down to the trench. Phase one is this reef you are standing in.</p>
+        <ol class="road">
+          <li class="glass reveal">
+            <span class="phase">01 · Now</span>
+            <h3>Surface</h3>
+            <p>The underwater site, the town, and the crew call. You are here, on Pineapple Lane.</p>
+          </li>
+          <li class="glass reveal">
+            <span class="phase">02 · Next</span>
+            <h3>Fair launch</h3>
+            <p>Publish the contract, pool liquidity, burn it, and renounce ownership. Chart goes live with the real address only.</p>
+          </li>
+          <li class="glass reveal">
+            <span class="phase">03 · Later</span>
+            <h3>Jellyfish fields</h3>
+            <p>Meme contests, jelly-jar rewards, and the first conversations with listing desks.</p>
+          </li>
+          <li class="glass reveal">
+            <span class="phase">04 · Deep</span>
+            <h3>Pineapple city</h3>
+            <p>Merch, a tiny reef game, and whatever the crew votes to build next.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="band" id="crew">
+      <div class="wrap">
+        <h2 class="reveal">Crew & questions</h2>
+        <p class="lede reveal">Socials open with the launch. Until the handles are posted here, treat every other account as a costume.</p>
+        <div class="crew reveal">
+          <a class="btn btn-aqua" href="https://x.com/spongebnb_" target="_blank" rel="noopener noreferrer">X</a>
+          <button class="btn btn-yellow" type="button" data-soon>Telegram</button>
+          <button class="btn btn-pink" type="button" data-soon>Chart</button>
+        </div>
+        <div class="faq" style="margin-top: 28px">
+          <details class="glass faq-item">
+            <summary>Is this the real cartoon?</summary>
+            <p>No. SpongeBNB is an unofficial fan-made meme project with original cartoon art. It is not affiliated with, endorsed by, or connected to Nickelodeon, Paramount, or SpongeBob SquarePants.</p>
+          </details>
+          <details class="glass faq-item">
+            <summary>Which chain is $SPONGE on?</summary>
+            <p>BNB Smart Chain, as a BEP-20 token, once the contract is deployed. Nothing is tradable before that address is posted on this site.</p>
+          </details>
+          <details class="glass faq-item">
+            <summary>What are the taxes?</summary>
+            <p>The launch plan is 0% buy and 0% sell, with liquidity burned and ownership renounced. Those switches get flipped at launch, not before.</p>
+          </details>
+          <details class="glass faq-item">
+            <summary>When can I buy?</summary>
+            <p>When the contract is published here and on the official crew channels. Bookmark this page and ignore addresses that show up in DMs.</p>
+          </details>
+          <details class="glass faq-item">
+            <summary>Is this financial advice?</summary>
+            <p>No. Meme coins are speculative and can go to zero. Only use money you can afford to lose, and never share a seed phrase.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <h2>SpongeBNB</h2>
+    <p class="fine">$SPONGE · BNB Smart Chain · Pre-launch</p>
+    <p class="fine">SpongeBNB is an unofficial fan-made meme coin and is not affiliated with, endorsed by, or associated with Nickelodeon, Paramount, or the SpongeBob SquarePants franchise. The reef, mascot, and Patty Shack are original cartoon art. Cryptocurrency is volatile. Do your own research.</p>
+    <p class="fine">© 2026 SpongeBNB. Dive responsibly.</p>
+  </footer>
+
+  <button class="btn btn-yellow surface-btn" id="surface-btn" type="button">Back to surface</button>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="main.js?v=3"></script>
+</body>
+</html>
